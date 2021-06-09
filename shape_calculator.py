@@ -24,6 +24,14 @@ class Rectangle:
         the height and the number of \* in each line should be equal to the width. There should be a new line
         at the end of each line. If the width or height is larger than 50, return string "Too big for picture"
         '''
+        if self.width > 50 or self.height > 50:
+            return 'Too big for picture.'
+        else:
+            output = ''
+            for i in range(self.height):
+                output += ('*' * self.width + '\n')
+                i += 1
+            return output
 
     def get_amount_inside(self, shape):
         '''
@@ -36,3 +44,7 @@ class Rectangle:
 class Square(Rectangle):
     def __init__(self, side_length):
         super().__init__(side_length, side_length)
+
+    def set_side(self, side_length):
+        super().set_width(side_length)
+        super().set_height(side_length)
