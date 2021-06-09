@@ -7,18 +7,33 @@ class Rectangle:
         return f'Rectangle(width={self.width}, height={self.height})'
 
     def set_width(self, width):
+        '''
+        Sets the width of the shape
+        '''
         self.width = width
 
     def set_height(self, height):
+        '''
+        Sets the height of the shape
+        '''
         self.height = height
 
     def get_area(self):
+        '''
+        Returns the area of the shape
+        '''
         return self.width * self.height
 
     def get_perimeter(self):
+        '''
+        Returns the perimeter of the shape
+        '''
         return (2 * self.width + 2 * self.height)
 
     def get_diagonal(self):
+        '''
+        Returns the diagonal of the shape
+        '''
         return (self.width ** 2 + self.height ** 2) ** .5
 
     def get_picture(self):
@@ -39,8 +54,9 @@ class Rectangle:
     def get_amount_inside(self, shape):
         '''
         Returns the number of times the passed in shape could fit inside the shape. Ex: a rectangle with a width
-        of 4 and a height of 8 could fit in 2 sqaures with sides of 4
+        of 4 and a height of 8 could fit in 2 squares with sides of 4
         '''
+        return self.get_area() // shape.get_area()
 
 
 
